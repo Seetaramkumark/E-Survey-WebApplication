@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Political and Social Survey</title>
+    <style>
+		body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+form {
+    text-align: left;
+}
+
+label, input, select, textarea {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+input, select, textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 100px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+	</style>
+	
+	
+</head>
+<body>
+	
+    <div class="container">
+        <h1>Political and Social Survey</h1>
+        <form action="/api/insertPoliticalSurvey" method="post" onsubmit="return showSuccessAlert()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="q1">1. Are you registered to vote?</label>
+            <select id="q1" name="vote" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="q2">2. How often do you follow political news?</label>
+            <select id="q2" name="news" required>
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+                <option value="rarely">Rarely</option>
+                <option value="never">Never</option>
+            </select>
+
+            <label for="q3">3. What political party do you align with (if any)?</label>
+            <input type="text" id="q3" name="party" required>
+
+            <label for="q4">4. How satisfied are you with the current political climate?</label>
+            <select id="q4" name="satisfied" required>
+                <option value="very-satisfied">Very Satisfied</option>
+                <option value="satisfied">Satisfied</option>
+                <option value="neutral">Neutral</option>
+                <option value="dissatisfied">Dissatisfied</option>
+                <option value="very-dissatisfied">Very Dissatisfied</option>
+            </select>
+
+            <label for="q5">5. Do you believe your voice is heard in political decisions?</label>
+            <select id="q5" name="believe" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="q6">6. Are there specific social issues that are most important to you?</label>
+            <textarea id="q6" name="social" rows="4"></textarea>
+
+            <label for="q7">7. How do you typically gather information about political candidates?</label>
+            <textarea id="q7" name="info" rows="4"></textarea>
+
+            <label for="q8">8. Have you actively participated in any political campaigns or advocacy efforts?</label>
+            <select id="q8" name="active" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="q9">9. What changes would you like to see in your local community?</label>
+            <textarea id="q9" name="changes" rows="4"></textarea>
+
+            <label for="q10">10. Do you have any suggestions for improving political engagement?</label>
+            <textarea id="q10" name="suggestions" rows="4"></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <script>
+        function showSuccessAlert() {
+            alert("Thank you for submitting the survey!");
+            setTimeout(function() {
+                window.location.replace = "index.html#services";
+            }, 0);
+            return true;
+        }
+    
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from submitting immediately
+
+            // Perform any additional actions here if needed
+
+            // Submit the form programmatically
+            if (showSuccessAlert()) {
+                form.submit();
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Engagement Survey</title>
+    <style>
+		body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+form {
+    text-align: left;
+}
+
+label, input, select {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+input, select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+	</style>
+	
+	
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Engagement Survey</h1>
+        <form action="/api/insertEmplyeeEngagement" method="post" onsubmit="return showSuccessAlert()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="department">Department:</label>
+            <input type="text" id="department" name="department" required>
+
+            <label for="q1">1. Do you feel valued in your role?</label>
+            <select id="q1" name="role" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="q2">2. Are you satisfied with the opportunities for professional growth?</label>
+            <select id="q2" name="oppurtunity" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="q3">3. Do you feel comfortable providing feedback to your superiors?</label>
+            <select id="q3" name="feedback" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="q4">4. Are you happy with the work-life balance provided?</label>
+            <select id="q4" name="worklife" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="q5">5. Do you feel motivated to perform at your best?</label>
+            <select id="q5" name="motivation" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="q6">6. Are you satisfied with the communication within the company?</label>
+            <select id="q6" name="satisfied" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="q7">7. Do you feel recognized for your contributions?</label>
+            <select id="q7" name="recognized" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="q8">8. Are you comfortable with the company's values and culture?</label>
+            <select id="q8" name="comfortable" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="q9">9. Do you have the necessary resources to excel in your role?</label>
+            <select id="q9" name="resourses" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="q10">10. Are you satisfied with your overall job satisfaction?</label>
+            <select id="q10" name="overalljob" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <script>
+        function showSuccessAlert() {
+            alert("Thank you for submitting the survey!");
+            setTimeout(function() {
+                window.location.replace = "index.html#services";
+            }, 0);
+            return true;
+        }
+    
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from submitting immediately
+
+            // Perform any additional actions here if needed
+
+            // Submit the form programmatically
+            if (showSuccessAlert()) {
+                form.submit();
+            }
+        });
+    });
+</script>
+</body>
+</html>

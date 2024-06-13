@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+		body {
+    font-family: Arial, sans-serif;	
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: right;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+nav {
+    background-color: #444;
+    color: #fff;
+    padding: 10px;
+    width: 200px;
+    float: left;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+}
+
+main {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+	</style>
+</head>
+<body>
+    <header>
+        <h1>Welcome, Admin!</h1>
+        <a href="admin login.html">Logout</a>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Surveys</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Dashboard Overview</h2>
+        <div class="card">
+            <h3>Total Surveys</h3>
+            <p>50</p>
+        </div>
+        <div class="card">
+            <h3>Responses Today</h3>
+            <p>10</p>
+        </div>
+        <div class="card">
+            <h3>Active Surveys</h3>
+            <p>30</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Admin Dashboard</p>
+    </footer>
+</body>
+</html>

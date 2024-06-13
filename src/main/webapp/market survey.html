@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Research Survey</title>
+    <style>
+		body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+form {
+    text-align: left;
+}
+
+label, input, select, textarea {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+input, select, textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 100px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+	</style>
+	
+	
+</head>
+<body>
+    <div class="container">
+        <h1>Market Research Survey</h1>
+        <form action="/api/insertMarketResearch" method="post" onsubmit="return showSuccessAlert()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="q1">1. How often do you purchase products in this category?</label>
+            <select id="q1" name="q1" required>
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+                <option value="rarely">Rarely</option>
+                <option value="never">Never</option>
+            </select>
+
+            <label for="q2">2. What factors influence your purchasing decisions the most?</label>
+            <textarea id="q2" name="q2" rows="4" required></textarea>
+
+            <label for="q3">3. Are you loyal to a specific brand in this category?</label>
+            <select id="q3" name="q3" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="q4">4. What do you think about the current pricing of products in this category?</label>
+            <select id="q4" name="q4" required>
+                <option value="reasonable">Reasonable</option>
+                <option value="expensive">Expensive</option>
+                <option value="affordable">Affordable</option>
+            </select>
+
+            <label for="q5">5. How satisfied are you with the quality of products available in this category?</label>
+            <select id="q5" name="q5" required>
+                <option value="very-satisfied">Very Satisfied</option>
+                <option value="satisfied">Satisfied</option>
+                <option value="neutral">Neutral</option>
+                <option value="dissatisfied">Dissatisfied</option>
+                <option value="very-dissatisfied">Very Dissatisfied</option>
+            </select>
+
+            <label for="q6">6. Are there any specific features or attributes you look for in products from this category?</label>
+            <textarea id="q6" name="q6" rows="4" required></textarea>
+
+            <label for="q7">7. How likely are you to recommend products from this category to others?</label>
+            <select id="q7" name="q7" required>
+                <option value="very-likely">Very Likely</option>
+                <option value="likely">Likely</option>
+                <option value="neutral">Neutral</option>
+                <option value="unlikely">Unlikely</option>
+            </select>
+
+            <label for="q8">8. Are there any specific brands or products that you think are leaders in this category?</label>
+            <textarea id="q8" name="q8" rows="4" required></textarea>
+
+            <label for="q9">9. Do you often seek out reviews or opinions before making a purchase in this category?</label>
+            <select id="q9" name="q9" required>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="q10">10. Are there any new or emerging trends in this category that have caught your attention?</label>
+            <textarea id="q10" name="q10" rows="4" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <script>
+        function showSuccessAlert() {
+            alert("Thank you for submitting the survey!");
+            setTimeout(function() {
+                window.location.replace = "index.html#services";
+            }, 0);
+            return true;
+        }
+    
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from submitting immediately
+
+            // Perform any additional actions here if needed
+
+            // Submit the form programmatically
+            if (showSuccessAlert()) {
+                form.submit();
+            }
+        });
+    });
+</script>
+</body>
+</html>
